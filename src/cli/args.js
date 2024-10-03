@@ -4,7 +4,6 @@ const parseArgs = () => {
     const argsList = argv;
     let resultString = '';
     let stats = 2;
-    console.log(argv)
     argv.slice(2,).forEach((key, value) => {
         key = key.slice(2,);
         if (stats === 2) {
