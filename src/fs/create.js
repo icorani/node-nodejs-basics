@@ -8,7 +8,6 @@ const content = 'I am fresh and young';
 const pathfile = path.resolve('src/fs/files/fresh.txt');
 
 const create = async () => {
-    console.log(stat('src/fs/files/fresh.txt'));
     try {
         await writeFile(pathfile, content, {flag: 'wx'});
     } catch (err) {
