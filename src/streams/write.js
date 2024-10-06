@@ -7,7 +7,6 @@ const write = async () => {
     await stdin.on('data', data => {
         fileWriteStream.write(data);
     })
-
 };
 
 await write();
