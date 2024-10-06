@@ -1,6 +1,6 @@
 import path from "node:path";
 import {existsSync} from 'node:fs';
-import {cp, constants, access} from 'node:fs/promises';
+import {cp} from 'node:fs/promises';
 
 
 const sourcePath = path.resolve('src/fs/files/.');
@@ -12,8 +12,8 @@ const copy = async () => {
     try {
             await cp(sourcePath, destPath,
                 {
-                    'errorOnExist': true,
-                    'recursive': true,
+                    errorOnExist: true,
+                    recursive: true,
                 })
         } catch (err) {
             console.log(err)
