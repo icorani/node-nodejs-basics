@@ -8,7 +8,8 @@ const copy = async () => {
     try {
         await copyFile(fromPath, goalPath,constants.COPYFILE_EXCL)
     } catch (err) {
-        throw Error('FS operation failed');
+        console.log(err)
+        // throw Error('FS operation failed');
     }
 };
 
