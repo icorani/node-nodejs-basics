@@ -16,8 +16,7 @@ const copy = async () => {
                     recursive: true,
                 })
         } catch (err) {
-            console.log(err)
-            // throw Error('FS operation failed');
+            throw Error('FS operation failed');
         }
     }
 
