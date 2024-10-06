@@ -1,16 +1,15 @@
 import path from "node:path";
-import fs from "node:fs";
+import { copyFile, constants } from 'node:fs/promises';
+
+const fromPath = path.resolve('src/fs/files/.');
+const goalPath = path.resolve('src/fs/files_copy/.');
 
 const copy = async () => {
-    const fromPath = path.dirname('files/.');
-    const goalPath = path.dirname('files_copy/.');
-    fs.cp(fromPath, goalPath,
-        {recursive: true},
-            err => {
-        if (err) {
-            console.error("FS operation failed", err)
-        }
-    });
+    try {
+        await copyFile(fromPath, goalPath,constants.COPYFILE_EXCL)
+    } catch (err) {
+        throw Error('FS operation failed');
+    }
 };
 
 await copy();
