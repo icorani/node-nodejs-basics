@@ -12,7 +12,6 @@ const create = async () => {
     try {
         await writeFile(pathfile, content, {flag: 'wx'});
     } catch (err) {
-        console.log(err);
         throw Error('FS operation failed');
     }
 };
